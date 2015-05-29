@@ -13,16 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150528171815) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "apps", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "app_id"
   end
 
-  add_index "apps", ["app_id"], name: "index_apps_on_app_id", using: :btree
+  add_index "apps", ["app_id"], name: "index_apps_on_app_id"
 
   create_table "keywords", force: :cascade do |t|
     t.string   "value"
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150528171815) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "matches", ["app_id"], name: "index_matches_on_app_id", using: :btree
-  add_index "matches", ["keyword_id"], name: "index_matches_on_keyword_id", using: :btree
+  add_index "matches", ["app_id"], name: "index_matches_on_app_id"
+  add_index "matches", ["keyword_id"], name: "index_matches_on_keyword_id"
 
 end

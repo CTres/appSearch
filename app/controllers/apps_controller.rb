@@ -4,12 +4,8 @@ class AppsController < ApplicationController
 
 
   def show
-    @appFetch = ITunesSearchAPI.lookup(id: @app.app_id)
-    @keywords = []
-    @app.keywords.each do |k|
-      hash = {:term => k.value, :rank => k.result.index(@app.app_id.to_i) + 1 }
-      @keywords.push(hash)
-    end
+    @appFetch = App.lookup(@app)
+    @keywords = App.lookupKeywords(@app)
   end
 
   #if it isn't in the database, add it.

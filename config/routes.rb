@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#home'
-  get 'home' => 'application#home'
-  post 'appLookup' => 'application#search'
+  root 'searches#home'
+  get 'home' => 'searches#home'
+  post 'appLookup' => 'searches#search'
   match 'app' => 'apps#show', :via => :get
 
   # Example of regular route:
