@@ -1,0 +1,55 @@
+
+<div class="container">
+  <h1>
+    <%= @appFetch['trackName'] %>
+  </h1>
+  <div class="screenshots row">
+    <% @appFetch['screenshotUrls'].each do |image| %>
+      <%= image_tag image, size: '240x456' %>
+    <% end %>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Description</h3>
+        </div>
+        <div class="panel-body">
+          <%= @appFetch['description'] %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Keywords</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <th>
+                term
+              </th>
+              <th>
+                rank
+              </th>
+            </thead>
+            <tbody>
+            <% @keywords.each do |keyword| %>
+              <tr>
+                <td>
+                  <%= keyword[:term]%>
+                </td>
+                <td>
+                  <%= keyword[:rank] %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<%= simple_form_for :app, remote: true, url: '/appLookup' do |f| %>
+  <%= f.input :keyword, input_html: { class: 'searchField' }, placeholder: 'Search an App', label: false, autofocus: true%>
+<% end %>
+
+
+<div id="searchResult">
+
+</div>

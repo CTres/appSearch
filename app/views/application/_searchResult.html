@@ -1,0 +1,40 @@
+<table class="table">
+  <thead>
+    <th>
+      logo
+    </th>
+    <th>
+      name
+    </th>
+    <th>
+      rating
+    </th>
+    <th>
+      reviews
+    </th>
+    <th>
+      version
+    </th>
+  </thead>
+  <tbody>
+  <% @searchTerm.each do |result| %>
+    <tr>
+      <td>
+        <%= image_tag result['artworkUrl60'], :size => '40x40'%>
+      </td>
+        <td>
+          <%= link_to result['trackName'], app_path(app_id: result['trackId']) %>
+        </td>
+      <td>
+        <%= result['averageUserRating'] %>
+      </td>
+      <td>
+        <%= result['userRatingCount'] %>
+      </td>
+      <td>
+        <%= result['version'] %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
