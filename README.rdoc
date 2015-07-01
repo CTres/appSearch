@@ -1,3 +1,0 @@
-== appSearch
-
-Mission: provide a simple interface for exploring app keywords and rankings. 
